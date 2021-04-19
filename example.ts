@@ -31,7 +31,7 @@ async function processTransaction(bridge: EthersBridge, tx: PopulatedTransaction
     });
 
     const provider = new ethers.providers.JsonRpcProvider(JSONRPC_ENDPOINT);
-    const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, );
+    const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider);
 
     const tx: PopulatedTransaction = await contract.populateTransaction.approve("0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "10000000000000000000"); // Change me - according to required contract call
 
